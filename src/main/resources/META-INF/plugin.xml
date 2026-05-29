@@ -1,0 +1,27 @@
+<idea-plugin>
+    <id>com.smartcopy.intellij</id>
+    <name>SmartCopy</name>
+    <vendor>SmartCopy</vendor>
+    <description><![CDATA[
+    Copy code with context: file path, line numbers, and diagnostics (errors/warnings).
+    Perfect for pasting into Claude Code CLI or other AI assistants.
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <actions>
+        <action id="SmartCopy.CopyWithContextMenu"
+                class="com.smartcopy.SmartCopyAction"
+                text="Copy with Context"
+                description="Copy selected code with file path, line numbers, and diagnostics">
+            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="CopyReference"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt C"/>
+        </action>
+        <action id="SmartCopy.CopyWithEditorTab"
+                class="com.smartcopy.SmartCopyAction"
+                text="Copy with Context"
+                description="Copy selected code with file path, line numbers, and diagnostics">
+            <add-to-group group-id="EditorTabPopupMenu" anchor="after" relative-to-action="CopyReference"/>
+        </action>
+    </actions>
+</idea-plugin>
